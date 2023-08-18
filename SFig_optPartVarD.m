@@ -1,7 +1,7 @@
 clear
 close all
 
-load hetP_varDT
+load flat_varDT
 
 % sigma=0.01
 for k=1:4

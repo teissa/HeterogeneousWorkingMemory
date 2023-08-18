@@ -71,8 +71,7 @@ end
 bp=mean(U_learn(:,1:Nti)');
 
 %update learning
- het = het + kap*bp; 
- het = 2*(het-min(min(het)))/(max(max(het))-min(min(het)))-1;
+ het = 0.99*het + kap*bp; 
 W_learn= dx*(1+s*het).*(exp(-(X-Y).^2)-A*exp(-(X-Y).^2/sw^2));
 
 plot(xsc*(pi/180),U_learn(:,Nti),'color','k','linewidth',2)
@@ -116,8 +115,7 @@ end
 bp=mean(U_learn(:,1:Nti)');
 
 %update learning
- het = het + kap*bp; 
- het = 2*(het-min(min(het)))/(max(max(het))-min(min(het)))-1;
+ het = 0.99*het + kap*bp; 
 W_learn= dx*(1+s*het).*(exp(-(X-Y).^2)-A*exp(-(X-Y).^2/sw^2));
 
 figure; hold on;
